@@ -7,22 +7,22 @@
     format="10"
     ir-eligibility="COMPATIBLE"
     plugin-version="3.4.2"
-    timestamp="1566847512737"
+    timestamp="1566848937231"
     token="-289417955215388742"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="375" />
+        duration="372" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="13" />
+        duration="73" />
     <task
         name="verifier"
-        duration="7" />
+        duration="6" />
 
     <artifact
         location="C:\UsersAndroid\MemeGenerator\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
@@ -75,7 +75,7 @@
     <build
         build-mode="COLD"
         ir-eligibility="COMPATIBLE"
-        timestamp="1566847512737"
+        timestamp="1566848937231"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\UsersAndroid\MemeGenerator\app\build\intermediates\split-apk\debug\slices\slice_6.apk"

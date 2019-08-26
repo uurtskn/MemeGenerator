@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView bmImage;
     TextView topText,bottomText;
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +41,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void generateMeme(View view) {
 
+        spinner = (Spinner)findViewById(R.id.spinner);
+        String selectedMeme = spinner.getSelectedItem().toString();
+
         DownloadMeme downloadMeme = new DownloadMeme(bmImage);
 
         topText = (EditText) findViewById(R.id.topText);
         bottomText = (EditText) findViewById(R.id.bottomText);
         try{
-            String url ="https://ronreiter-meme-generator.p.rapidapi.com/meme?font=Impact&font_size=50&meme=Condescending-Wonka&top=";
-            String concattedUrl=url.concat(topText.getText().toString().concat("&bottom=").concat(bottomText.getText().toString()));
+            String url ="https://ronreiter-meme-generator.p.rapidapi.com/meme?font=Impact&font_size=50&meme=";
+            String concattedUrl=url.concat(selectedMeme.trim().toString().concat("&top=").concat(topText.getText().toString().concat("&bottom=").concat(bottomText.getText().toString())));
             downloadMeme.execute(concattedUrl);
 
         }catch (Exception e)
