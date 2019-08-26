@@ -3,6 +3,7 @@ package com.uatech.memegenerator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -25,7 +26,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+    static Bitmap generatedImage;
     ImageView bmImage;
     TextView topText,bottomText;
     Spinner spinner;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             String url ="https://ronreiter-meme-generator.p.rapidapi.com/meme?font=Impact&font_size=50&meme=";
             String concattedUrl=url.concat(selectedMeme.trim().toString().concat("&top=").concat(topText.getText().toString().concat("&bottom=").concat(bottomText.getText().toString())));
             downloadMeme.execute(concattedUrl);
+
 
         }catch (Exception e)
         {
@@ -93,9 +95,12 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Bitmap result) {
             if(result != null) {
-                bmImage = (ImageView)findViewById(R.id.imageView5);
-                bmImage.setImageBitmap(result);
+                generatedImage=result;
             }
+            Intent intent = new Intent(getApplicationContext(),MemeDetail.class);
+            startActivity(intent);
+
+
         }
     }
 
