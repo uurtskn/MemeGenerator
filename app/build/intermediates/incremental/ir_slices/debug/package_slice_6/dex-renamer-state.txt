@@ -1,0 +1,4 @@
+#Mon Aug 26 21:25:14 CEST 2019
+base.0=C\:\\UsersAndroid\\MemeGenerator\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\6
+path.0=classes.dex
+renamed.0=classes.dex
